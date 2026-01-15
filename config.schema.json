@@ -115,6 +115,12 @@
                     ]
                   },
                   {
+                    "title": "Fan with Multiple Lights",
+                    "enum": [
+                      "FanMultiLight"
+                    ]
+                  },
+                  {
                     "title": "Air Purifier",
                     "enum": [
                       "AirPurifier"
@@ -397,7 +403,35 @@
                 "type": "integer",
                 "placeholder": "1",
                 "condition": {
-                  "functionBody": "return model.devices && model.devices[arrayIndices] && ['Fan', 'FanLight'].includes(model.devices[arrayIndices].type);"
+                  "functionBody": "return model.devices && model.devices[arrayIndices] && ['Fan', 'FanLight', 'FanMultiLight'].includes(model.devices[arrayIndices].type);"
+                }
+              },
+              "dpFanOn": {
+                "type": "integer",
+                "placeholder": 142,
+                "condition": {
+                  "functionBody": "return model.devices && model.devices[arrayIndices] && ['FanMultiLight'].includes(model.devices[arrayIndices].type);"
+                }
+              },
+              "dpLight1On": {
+                "type": "integer",
+                "placeholder": 1,
+                "condition": {
+                  "functionBody": "return model.devices && model.devices[arrayIndices] && ['FanMultiLight'].includes(model.devices[arrayIndices].type);"
+                }
+              },
+              "dpLight2On": {
+                "type": "integer",
+                "placeholder": 2,
+                "condition": {
+                  "functionBody": "return model.devices && model.devices[arrayIndices] && ['FanMultiLight'].includes(model.devices[arrayIndices].type);"
+                }
+              },
+              "dpLight3On": {
+                "type": "integer",
+                "placeholder": 3,
+                "condition": {
+                  "functionBody": "return model.devices && model.devices[arrayIndices] && ['FanMultiLight'].includes(model.devices[arrayIndices].type);"
                 }
               },
               "dpChildLock": {
